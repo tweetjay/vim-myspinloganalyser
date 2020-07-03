@@ -4,9 +4,10 @@
 "   Url:         https://github.com/tweetjay/vim-tweetjay-syntax
 "   License:     The MIT License (MIT)
 "
-"   Language: mySPIN Keywords
+"   Language: mySPIN logfile Keywords
 "   Vim syntax file
 "
 " }}}
 "
-au BufRead,BufNewFile *.msp, *.myspin set filetype=mySPIN
+au BufRead,BufNewFile *.msp set filetype=mySPINLog
+au BufRead,BufNewFile *.myspin set filetype=mySPINLog

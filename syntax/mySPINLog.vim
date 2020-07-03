@@ -4,7 +4,7 @@
 "   Url:         https://github.com/tweetjay/vim-tweetjay-syntax
 "   License:     The MIT License (MIT)
 "
-"   Language: mySPIN Keywords
+"   Language: mySPIN logfile Keywords
 "   Vim syntax file
 "
 " }}}
@@ -29,7 +29,7 @@ syn match appUrl '[a-z]\+\.[a-z]\+\.[a-z]\+\.*[a-z-]*'
 syn match fatalError '^.*FATAL\].*$'
 syn match errorError '^.*ERROR/.*$'
 
-let b:current_syntax = "mySPIN"
+let b:current_syntax = "mySPINLog"
 
 hi def link appUrl          Title
 hi def link sdkVersion      Number
