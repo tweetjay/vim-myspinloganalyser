@@ -9,4 +9,5 @@
 "
 " }}}
 "
-au BufRead,BufNewFile *.{msp, myspin} setfiletype mySPINLog
+au BufRead,BufNewFile *.msp setfiletype mySPINLog
+au BufRead,BufNewFile *.myspin setfiletype mySPINLog
