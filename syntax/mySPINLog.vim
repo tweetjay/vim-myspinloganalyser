@@ -35,8 +35,8 @@ syn match protocolVersion 'Protocol: V\d\.\d\.\d'
 " match app urls like: com.test.test
 syn match appUrl '[a-z]\+\.[a-z]\+\.[a-z]\+\.*[a-z-]*'
 
-syn match streamDevice 'MSSGenericStreamDevice \(init\|dealloc\)'
-syn match deviceReck 'MSSUDPDeviceListener receiveIPAddressBroadcast'
+syn match streamDevice '^.*MSSGenericStreamDevice \(init\|dealloc\).*$'
+syn match deviceReck '^.*MSSUDPDeviceListener receiveIPAddressBroadcast.*$'
 
 let b:current_syntax = "mySPINLog"
 
