@@ -26,7 +26,7 @@ hi! Fatal guifg=#FFFFFF guibg=#FF1010 guisp=NONE gui=bold ctermfg=NONE ctermbg=0
 hi! Blue guifg=#00C0FF guibg=NONE guisp=NONE gui=NONE ctermfg=69 ctermbg=NONE cterm=NONE
 hi! NeonGreen guifg=#00FF00 guibg=NONE guisp=NONE gui=NONE ctermfg=76 ctermbg=NONE cterm=NONE
 
-syn match basicHighlights '\([Ss]tart\|[Ss]top\|[Ee]rror\|fail\|false\|true\|timeout\|terminate\|shutdown\)\w*'
+syn match basicHighlights '\([Ss]tart\|[Ss]top\|[Ee]rror\|fail\|false\|true\|timeout.*[\d\.].*\|terminate\|shutdown\|nil\|null\)\w*'
 
 syn match fatalError '^.*FATAL\].*$'
 syn match warningError '^.*WARNING/.*$'
@@ -42,20 +42,22 @@ syn match protocolVersion 'Protocol: V\d\.\d\.\d'
 syn match appUrl '[a-z]\+\.[a-z]\+\.[a-z]\+\(\.[a-z0-9-]*\)*'
 
 syn match streamDevice '^.*MSSGenericStreamDevice \(init\|dealloc\).*$'
-syn match deviceReck '^.*MSSUDPDeviceListener\( receiveIPAddressBroadcast\|.*ignoring\).*$'
+syn match deviceReck '^.*MSSUDPDeviceListener \(receiveIPAddressBroadcast\|connectTo:.*\(ignoring\|connecting\)\).*$'
 syn match screenManagerRequest 'MSSScreenManager requestFrameDataForRect.*Received framebuffer request'
 syn match screenManagerAnswer 'MSSScreenManager answerPendingRequests.*answer pending request'
+syn match accessoryConnection '^.*MSSEAFDeviceListener \(accessoryDidDisconnectNotification\|connectToAccessories].*accessory candidate\).*$'
 
 let b:current_syntax = "mySPINLog"
 
 " Specific stuff
 hi def link screenManagerRequest NeonGreen
-hi def link screenManagerAnswer NeonGreen
-hi def link appUrl          Title
-hi def link sdkVersion      Number
-hi def link protocolVersion Number
-hi def link streamDevice    Error
-hi def link deviceReck      Blue
+hi def link screenManagerAnswer  NeonGreen
+hi def link appUrl               Title
+hi def link sdkVersion           Number
+hi def link protocolVersion      Number
+hi def link streamDevice         Error
+hi def link accessoryConnection  Error
+hi def link deviceReck           Blue
 " General stuff
 hi def link basicHighlights Keyword
 hi def link fatalError      Fatal
