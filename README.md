@@ -1,28 +1,30 @@
-# [![tweetjay][avatar]](https://github.com/tweetjay) syntax files for vim
+# Vim Tweetjay Syntax
 
-## Screenshot
+This plugin contains useful syntax highlighting for mySPIN log files.
 
-<!--
-![Screenshot](https://user-images.githubusercontent.com/234182/54509973-d49dd880-494b-11e9-833b-010463b6081b.jpg)
--->
+- [Vim Tweetjay Syntax](#vimtweetjaysyntax)
+    - [Description](#description)
+    - [Installation](#installation)
+- [License](#license)
 
-## Install
+## Description
 
-### vim-plug
+This syntax highlighting currently only contains highlighting for mySPIN log
+files.
 
-To install using the fancy [vim-plug](https://github.com/junegunn/vim-plug)
-manager, add the following lines to the plugin section in your `vimrc`:
+## Installation
 
-```vim
-Plug 'tweetjay/vim-tweetjay-syntax'
-```
+Use your favorite plugin manager.
+
+Using [vim-plug](https://github.com/junegunn/vim-plug):
+
+    Plug 'tweetjay/vim-tweetjay-syntax'
 
 ## License
 
-This theme is released unter the [MIT License][mit-license]
-© [Johannes Steudle][author]
+This plugin is released under the [MIT license][mit-license].
+© by [Johannes Steudle][github-profile].
 
-[mit-license]:   https://opensource.org/licenses/MIT
-[author]:        https://github.com/tweetjay
-[avatar]:        https://avatars3.githubusercontent.com/u/234182?s=40&v=4
-[license-badge]: https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
+[github-profile]: https://github.com/tweetjay
+[mit-license]:    https://opensource.org/licenses/MIT
+[license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
