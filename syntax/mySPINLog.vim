@@ -27,10 +27,13 @@ hi! Blue guifg=#00C0FF guibg=NONE guisp=NONE gui=NONE ctermfg=69 ctermbg=NONE ct
 hi! NeonGreen guifg=#00FF00 guibg=NONE guisp=NONE gui=NONE ctermfg=76 ctermbg=NONE cterm=NONE
 
 syn match basicHighlights '\([Ss]tart\|[Ss]top\|[Ee]rror\|fail\|false\|true\|timeout.*[\d\.].*\|terminate\|shutdown\|nil\|null\)\w*'
+syn match mySpinHighlights '\(MySpinScreenCapturingMethod\b\)'
 
 syn match fatalError '^.*FATAL\].*$'
 syn match warningError '^.*WARNING/.*$'
 syn match errorError '^.*ERROR/.*$'
+
+syn match comment '^//.*$'
 
 " match versions like: 2.1.0
 syn match sdkVersion      'SDK [vV]ersion: \d\.\d\.\d\(\.\d\)*'
@@ -42,7 +45,7 @@ syn match protocolVersion 'Protocol: V\d\.\d\.\d'
 syn match appUrl '[a-z]\+\.[a-z]\+\.[a-z]\+\(\.[a-z0-9-]*\)*'
 
 syn match streamDevice '^.*MSSGenericStreamDevice \(init\|dealloc\).*$'
-syn match deviceReck '^.*MSSUDPDeviceListener \(receiveIPAddressBroadcast\|connectTo:.*\(ignoring\|connecting\)\).*$'
+syn match deviceReck '^.*MSSUDPDeviceListener \(receiveIPAddressBroadcast\|connectTo:.*\(ignoring\|connecting\)\|checkUnavailable.*lost available\).*$'
 syn match screenManagerRequest 'MSSScreenManager requestFrameDataForRect.*Received framebuffer request'
 syn match screenManagerAnswer 'MSSScreenManager answerPendingRequests.*answer pending request'
 syn match accessoryConnection '^.*MSSEAFDeviceListener \(accessoryDidDisconnectNotification\|connectToAccessories].*accessory candidate\).*$'
@@ -59,7 +62,9 @@ hi def link streamDevice         Error
 hi def link accessoryConnection  Error
 hi def link deviceReck           Blue
 " General stuff
-hi def link basicHighlights Keyword
-hi def link fatalError      Fatal
-hi def link warningError    Warning
-hi def link errorError      Error
+hi def link comment          Comment
+hi def link basicHighlights  Keyword
+hi def link mySpinHighlights Keyword
+hi def link fatalError       Fatal
+hi def link warningError     Warning
+hi def link errorError       Error
