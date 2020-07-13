@@ -44,7 +44,9 @@ syn match protocolVersion 'Protocol: V\d\.\d\.\d'
 " match app urls like: com.test.test
 syn match appUrl '[a-z]\+\.[a-z]\+\.[a-z]\+\(\.[a-zA-Z0-9-]*\)*'
 
-syn match streamDevice '^.*MSSGenericStreamDevice \(init\|dealloc\).*$'
+syn match streamDevice '^.*\[MSSGenericStreamDevice \(init\|dealloc\).*$'
+syn match streamDeviceWarning '^.*\[MSSGenericStreamDevice.*NSStreamEventEndEncountered.*$'
+syn match streamDeviceError '^.*\[MSSGenericStreamDevice.*NSStreamEventErrorOccurred.*$'
 syn match deviceReck '^.*MSSUDPDeviceListener \(receiveIPAddressBroadcast\|connectTo:.*\(ignoring\|connecting\)\|checkUnavailable.*lost available\).*$'
 syn match screenManagerRequest '\[MSSScreenManager \(requestFrameDataForRect.*Received framebuffer request\|.*received framebuffer request\)'
 syn match screenManagerAnswer '\[MSSScreenManager answerPendingRequests\].*answer pending request'
@@ -59,6 +61,8 @@ hi def link appUrl               Title
 hi def link sdkVersion           Number
 hi def link protocolVersion      Number
 hi def link streamDevice         Error
+hi def link streamDeviceWarning  Error
+hi def link streamDeviceError    Fatal
 hi def link accessoryConnection  Error
 hi def link deviceReck           Blue
 " General stuff
