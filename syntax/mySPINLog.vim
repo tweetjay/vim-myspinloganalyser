@@ -46,7 +46,7 @@ syn match appUrl '[a-z]\+\.[a-z]\+\.[a-z]\+\(\.[a-z0-9-]*\)*'
 
 syn match streamDevice '^.*MSSGenericStreamDevice \(init\|dealloc\).*$'
 syn match deviceReck '^.*MSSUDPDeviceListener \(receiveIPAddressBroadcast\|connectTo:.*\(ignoring\|connecting\)\|checkUnavailable.*lost available\).*$'
-syn match screenManagerRequest 'MSSScreenManager requestFrameDataForRect.*Received framebuffer request'
+syn match screenManagerRequest 'MSSScreenManager \(requestFrameDataForRect.*Received framebuffer request\|.*received framebuffer request\)'
 syn match screenManagerAnswer 'MSSScreenManager answerPendingRequests.*answer pending request'
 syn match accessoryConnection '^.*MSSEAFDeviceListener \(accessoryDidDisconnectNotification\|connectToAccessories].*accessory candidate\).*$'
 
