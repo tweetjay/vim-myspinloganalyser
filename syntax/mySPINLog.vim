@@ -42,12 +42,12 @@ syn match sdkVersion      'SDK [vV]ersion: \d\.\d\.\d\(\.\d\)*'
 syn match protocolVersion 'Protocol: V\d\.\d\.\d'
 
 " match app urls like: com.test.test
-syn match appUrl '[a-z]\+\.[a-z]\+\.[a-z]\+\(\.[a-z0-9-]*\)*'
+syn match appUrl '[a-z]\+\.[a-z]\+\.[a-z]\+\(\.[a-zA-Z0-9-]*\)*'
 
 syn match streamDevice '^.*MSSGenericStreamDevice \(init\|dealloc\).*$'
 syn match deviceReck '^.*MSSUDPDeviceListener \(receiveIPAddressBroadcast\|connectTo:.*\(ignoring\|connecting\)\|checkUnavailable.*lost available\).*$'
-syn match screenManagerRequest 'MSSScreenManager \(requestFrameDataForRect.*Received framebuffer request\|.*received framebuffer request\)'
-syn match screenManagerAnswer 'MSSScreenManager answerPendingRequests.*answer pending request'
+syn match screenManagerRequest '\[MSSScreenManager \(requestFrameDataForRect.*Received framebuffer request\|.*received framebuffer request\)'
+syn match screenManagerAnswer '\[MSSScreenManager answerPendingRequests\].*answer pending request'
 syn match accessoryConnection '^.*MSSEAFDeviceListener \(accessoryDidDisconnectNotification\|connectToAccessories].*accessory candidate\).*$'
 
 let b:current_syntax = "mySPINLog"
