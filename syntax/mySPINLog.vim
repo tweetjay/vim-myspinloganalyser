@@ -25,9 +25,11 @@ hi! Error guifg=#e06c75 guibg=NONE guisp=NONE gui=bold ctermfg=30 ctermbg=NONE c
 hi! Fatal guifg=#FFFFFF guibg=#FF1010 guisp=NONE gui=bold ctermfg=NONE ctermbg=09 cterm=bold
 hi! Blue guifg=#00C0FF guibg=NONE guisp=NONE gui=NONE ctermfg=69 ctermbg=NONE cterm=NONE
 hi! NeonGreen guifg=#00FF00 guibg=NONE guisp=NONE gui=NONE ctermfg=76 ctermbg=NONE cterm=NONE
+hi! Green guifg=#2F8A71 guibg=NONE guisp=NONE gui=NONE ctermfg=114 ctermbg=NONE cterm=NONE
+hi! Purple guifg=#c678dd guibg=NONE guisp=NONE gui=NONE ctermfg=177 ctermbg=NONE cterm=NONE
 
 syn match basicHighlights '\([Ss]tart\|[Ss]top\|[Ee]rror\|fail\|false\|true\|timeout.*[\d\.].*\|terminate\|shutdown\|nil\|null\)\w*'
-syn match mySpinHighlights '\(MySpinScreenCapturingMethod\b\)'
+syn match mySpinHighlights '\(MySpinScreenCapturingMethod.*\)'
 
 syn match fatalError '^.*FATAL\].*$'
 syn match warningError '^.*WARNING/.*$'
@@ -48,15 +50,20 @@ syn match streamDevice '^.*\[MSSGenericStreamDevice \(init\|dealloc\).*$'
 syn match streamDeviceWarning '^.*\[MSSGenericStreamDevice.*NSStreamEventEndEncountered.*$'
 syn match streamDeviceError '^.*\[MSSGenericStreamDevice.*NSStreamEventErrorOccurred.*$'
 syn match deviceReck '^.*MSSUDPDeviceListener \(receiveIPAddressBroadcast\|connectTo:.*\(ignoring\|connecting\)\|checkUnavailable.*lost available\).*$'
+
 syn match screenManagerRequest '\[MSSScreenManager \(requestFrameDataForRect.*Received framebuffer request\|.*received framebuffer request\)'
-syn match screenManagerAnswer '\[MSSScreenManager answerPendingRequests\].*answer pending request'
-syn match accessoryConnection '^.*MSSEAFDeviceListener \(accessoryDidDisconnectNotification\|connectToAccessories].*accessory candidate\).*$'
+syn match screenManagerAnswer  '\[MSSScreenManager \(answerPendingRequests\].*answer pending request\|requestFrameDataForRect.*answer framebuffer.*\)'
+syn match screenManagerPending '\[MSSScreenManager requestFrameDataForRect.*saving incremental request as pending'
+
+syn match accessoryConnection  '^.*\[MSSEAFDeviceListener \(accessoryDidDisconnectNotification\|connectToAccessories].*accessory candidate\).*$'
 
 let b:current_syntax = "mySPINLog"
 
 " Specific stuff
-hi def link screenManagerRequest NeonGreen
+hi def link screenManagerRequest Green
 hi def link screenManagerAnswer  NeonGreen
+hi def link screenManagerPending Purple
+
 hi def link appUrl               Title
 hi def link sdkVersion           Number
 hi def link protocolVersion      Number
