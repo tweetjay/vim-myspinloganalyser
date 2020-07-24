@@ -28,17 +28,18 @@ hi! NeonGreen guifg=#00FF00 guibg=NONE guisp=NONE gui=NONE ctermfg=76 ctermbg=NO
 hi! Green guifg=#2F8A71 guibg=NONE guisp=NONE gui=NONE ctermfg=114 ctermbg=NONE cterm=NONE
 hi! Purple guifg=#c678dd guibg=NONE guisp=NONE gui=NONE ctermfg=177 ctermbg=NONE cterm=NONE
 
-syn match basicHighlights '\([Ss]tart\|[Ss]top\|[Ee]rror\|fail\|false\|true\|timeout.*[\d\.].*\|terminate\|shutdown\|nil\|null\)\w*'
+syn match basicHighlights '\([Ss]tart\|[Ss]top\|[Ee]rror\|fail\|false\|true\|timeout.*[\d\.].*\|terminate\|shutdown\|nil\|null\|disconnect\)\w*'
 syn match mySpinHighlights '\(MySpinScreenCapturingMethod.*\)'
+syn match componentStart '-\[\b\w*\b start[a-zA-Z]*\b\]'
 
-syn match fatalError '^.*FATAL\].*$'
+syn match fatalError   '^.*FATAL\].*$'
 syn match warningError '^.*WARNING/.*$'
-syn match errorError '^.*ERROR/.*$'
+syn match errorError   '^.*ERROR/.*$'
 
-syn match comment '^//.*$'
+syn match comment      '^//.*$'
 
 " match versions like: 2.1.0
-syn match sdkVersion      'SDK [vV]ersion: \d\.\d\.\d\(\.\d\)*'
+syn match sdkVersion   'SDK [vV]ersion: \d\.\d\.\d\(\.\d\)*'
 
 " match protocol versions like V2.0.0
 syn match protocolVersion 'Protocol: V\d\.\d\.\d'
@@ -46,16 +47,17 @@ syn match protocolVersion 'Protocol: V\d\.\d\.\d'
 " match app urls like: com.test.test
 syn match appUrl '[a-z]\+\.[a-z]\+\.[a-z]\+\(\.[a-zA-Z0-9-]*\)*'
 
-syn match streamDevice '^.*\[MSSGenericStreamDevice \(init\|dealloc\).*$'
+syn match streamDevice        '^.*\[MSSGenericStreamDevice \(init\|dealloc\).*$'
 syn match streamDeviceWarning '^.*\[MSSGenericStreamDevice.*NSStreamEventEndEncountered.*$'
-syn match streamDeviceError '^.*\[MSSGenericStreamDevice.*NSStreamEventErrorOccurred.*$'
-syn match deviceReck '^.*MSSUDPDeviceListener \(receiveIPAddressBroadcast\|connectTo:.*\(ignoring\|connecting\)\|checkUnavailable.*lost available\).*$'
+syn match streamDeviceError   '^.*\[MSSGenericStreamDevice.*NSStreamEventErrorOccurred.*$'
+syn match deviceReck          '^.*MSSUDPDeviceListener \(receiveIPAddressBroadcast\|connectTo:.*\(ignoring\|connecting\)\|checkUnavailable.*lost available\).*$'
 
 syn match screenManagerRequest '\[MSSScreenManager \(requestFrameDataForRect.*Received framebuffer request\|.*received framebuffer request\)'
 syn match screenManagerAnswer  '\[MSSScreenManager \(answerPendingRequests\].*answer pending request\|requestFrameDataForRect.*answer framebuffer.*\)'
 syn match screenManagerPending '\[MSSScreenManager requestFrameDataForRect.*saving incremental request as pending'
 
 syn match accessoryConnection  '^.*\[MSSEAFDeviceListener \(accessoryDidDisconnectNotification\|connectToAccessories].*accessory candidate\).*$'
+syn match transitionManagerTimeout '^.*handleElapsedTimeoutTimer.*$'
 
 let b:current_syntax = "mySPINLog"
 
@@ -63,6 +65,7 @@ let b:current_syntax = "mySPINLog"
 hi def link screenManagerRequest Green
 hi def link screenManagerAnswer  NeonGreen
 hi def link screenManagerPending Purple
+hi def link componentStart       Green
 
 hi def link appUrl               Title
 hi def link sdkVersion           Number
@@ -71,6 +74,7 @@ hi def link streamDevice         Error
 hi def link streamDeviceWarning  Error
 hi def link streamDeviceError    Fatal
 hi def link accessoryConnection  Error
+hi def link transitionManagerTimeout  Error
 hi def link deviceReck           Blue
 " General stuff
 hi def link comment          Comment
