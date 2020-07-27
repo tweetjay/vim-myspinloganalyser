@@ -59,7 +59,7 @@ syn match screenManagerPending '\[MSSScreenManager requestFrameDataForRect.*savi
 syn match accessoryConnection  '^.*\[MSSEAFDeviceListener \(accessoryDidDisconnectNotification\|connectToAccessories].*accessory candidate\).*$'
 syn match transitionManagerTimeout '^.*handleElapsedTimeoutTimer.*$'
 
-let b:current_syntax = "mySPINLog"
+let b:current_syntax = "MySpinLogAnalyser"
 
 " Specific stuff
 hi def link screenManagerRequest Green
