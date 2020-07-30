@@ -13,6 +13,12 @@
   " finish
 " endif
 
+set colorcolumn=""
+
+" General color assignment {{{
+hi! Normal guifg=#E3E3E7 guibg=#303030 guisp=NONE gui=NONE ctermfg=69 ctermbg=NONE cterm=NONE
+" }}}
+
 hi! Blue guifg=#00C0FF guibg=NONE guisp=NONE gui=NONE ctermfg=69 ctermbg=NONE cterm=NONE
 hi! NeonGreen guifg=#00FF00 guibg=NONE guisp=NONE gui=NONE ctermfg=76 ctermbg=NONE cterm=NONE
 hi! Green guifg=#2F8A71 guibg=NONE guisp=NONE gui=NONE ctermfg=114 ctermbg=NONE cterm=NONE
