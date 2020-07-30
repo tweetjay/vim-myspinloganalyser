@@ -18,7 +18,7 @@ Use your favorite plugin manager.
 
 Using [vim-plug](https://github.com/junegunn/vim-plug):
 
-    Plug 'tweetjay/vim-tweetjay-syntax'
+    Plug 'tweetjay/vim-myspinloganalyser'
 
 ## License
 
